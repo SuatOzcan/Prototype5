@@ -168,3 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafd8692cb9abe94fb3d0ec2c95c98e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomForceRangeMin: 13
+  randomForceRangeMax: 18
