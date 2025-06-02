@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -12,7 +13,12 @@ public class Target : MonoBehaviour
     private float _torqMax = 10;
     private float _xRange = 4;
     private float _ySpawn = -6;
+    private GameManager _gameManagerScript;
+    [SerializeField]
+    private int _pointValue;
 
+    [SerializeField]
+    private ParticleSystem _explosionParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,8 @@ public class Target : MonoBehaviour
             ForceMode.Impulse);
 
         transform.position = RandomSpawnPosition();
+
+        _gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private Vector3 RandomTorque()
@@ -48,5 +56,23 @@ public class Target : MonoBehaviour
     void Update()
     {
        
+    }
+
+    private void OnMouseDown()
+    {
+        if (_gameManagerScript.isGameActive)
+        {
+            Destroy(gameObject);
+            _gameManagerScript.UpdateScore(_pointValue);
+            Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+        if(gameObject.CompareTag("Good"))
+        {
+            _gameManagerScript.GameOver();
+        }
     }
 }
