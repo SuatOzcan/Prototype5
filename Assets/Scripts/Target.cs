@@ -69,8 +69,10 @@ public class Target : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Sensor")
         Destroy(gameObject);
-        if(gameObject.CompareTag("Good"))
+
+        if(gameObject.CompareTag("Good") && other.tag == "Sensor")
         {
             _gameManagerScript.GameOver();
         }
