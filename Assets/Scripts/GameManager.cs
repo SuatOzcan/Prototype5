@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public Button restartButton;
     private int score;
-    private float spawnRate = 1.0f;
+    private float spawnRate = 2.0f;
     public bool isGameActive;
 
     // Start is called before the first frame update
@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator SpawnTarget()
+    IEnumerator SpawnTarget(float spawnRateInput)
     {
         while (isGameActive)
         {
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(spawnRateInput);
             int randomIndex = Random.Range(0, targets.Count);
             Instantiate(targets[randomIndex]);
         }
@@ -61,11 +61,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
         isGameActive = true;
         score = 0;
-        StartCoroutine(nameof(SpawnTarget));
+        spawnRate = spawnRate / difficulty;
+        StartCoroutine(nameof(SpawnTarget), spawnRate);
         UpdateScore(0);
         titleScreen.SetActive(false);
     }
