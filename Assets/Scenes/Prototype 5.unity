@@ -1476,13 +1476,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 722870147}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+        m_MethodName: StartGame
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 3
           m_StringArgument: ASD
           m_BoolArgument: 0
         m_CallState: 2
@@ -1609,13 +1609,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 722870147}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+        m_MethodName: StartGame
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: ASD
           m_BoolArgument: 0
         m_CallState: 2
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 1611319331}
   m_Layer: 0
   m_Name: Sensor
-  m_TagString: Untagged
+  m_TagString: Sensor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,13 +1847,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 722870147}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+        m_MethodName: StartGame
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: ASD
           m_BoolArgument: 0
         m_CallState: 2
